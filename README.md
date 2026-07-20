@@ -27,19 +27,22 @@ pi -e ./custom-footer.ts
 ## Configuration
 
 The default layout matches Pi's original footer: most sections are dim, with
-context warnings at 60% and errors at 85%. The example below enables brighter
-colors and custom thresholds.
+context warnings at 60% and errors at 85%.
 
 Create `~/.pi/agent/custom-footer.json` for global defaults, or
-`.pi/custom-footer.json` for a project-specific override:
+`.pi/custom-footer.json` for a project-specific override. For example, this
+sets five context-usage bands—the same threshold configuration used globally
+by this extension:
 
 ```json
 {
-  "excludedExtensionStatuses": ["pi-git-branch-extension"],
+  "excludedExtensionStatuses": ["search"],
   "showCwdAndGitBranch": false,
   "contextThresholds": [
-    { "minPercent": 0, "color": "success" },
-    { "minPercent": 50, "color": "warning" },
+    { "minPercent": 0, "color": "dim" },
+    { "minPercent": 25, "color": "text" },
+    { "minPercent": 35, "color": "warning" },
+    { "minPercent": 50, "color": "accent" },
     { "minPercent": 75, "color": "error" }
   ],
   "colors": {
