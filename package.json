@@ -1,0 +1,18 @@
+{
+  "name": "pi-custom-footer-extension",
+  "version": "1.0.0",
+  "description": "Pi custom footer with configurable context thresholds and model effort",
+  "type": "module",
+  "pi": {
+    "extensions": [
+      "./custom-footer.ts"
+    ]
+  },
+  "files": [
+    "custom-footer.ts",
+    "README.md"
+  ],
+  "dependencies": {
+    "@earendil-works/pi-tui": "^0.80.10"
+  }
+}
